@@ -1,0 +1,49 @@
+GET http://localhost:8000/user/user_api
+Content-Type: application/json
+####
+POST http://localhost:8000/user/user_api
+Content-Type: application/json
+
+{
+    "cId": "052201000028",
+    "firstName": "Nguyen",
+    "middleName": "Duc",
+    "lastName": "Tri",
+    "bDate": "2001-04-04",
+    "phone": "0938671192",
+    "address": "34A 43 street",
+    "avatar": "https://i.pinimg.com/736x/fc/83/fe/fc83fe8c213691b5595338d704e8ca84--yellow-background-mellow-yellow.jpg",
+    "email": "nguyentri.alan@gmail.com",
+    "role": "1"
+}
+###
+GET http://localhost:8000/account/account_api
+Content-Type: application/json
+####
+POST http://localhost:8000/account/account_api
+Content-Type: application/json
+
+{
+    "email": "nguyentri.alan@gmail.com",
+    "password": "123"
+}
+###
+POST http://localhost:8000/account/login
+Content-Type: application/json
+
+{
+    "email": "nguyentri.alan@gmail.com",
+    "password": "1234"
+}
+###
+PUT http://localhost:8000/account/change_password
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI
+
+{
+    "oldPassword": "123",
+    "newPassword": "1234"
+}
+####
+GET http://localhost:8000/account/auth
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI
