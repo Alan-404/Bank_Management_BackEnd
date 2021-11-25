@@ -15,9 +15,11 @@ SELECT * FROM ROLE
 CREATE TABLE EMPLOYEE(
 	ID VARCHAR(50) PRIMARY KEY,
 	EMAILWORK VARCHAR(50) UNIQUE NOT NULL,
-    USERID INT,
+    USERID VARCHAR(20),
     FOREIGN KEY(USERID) REFERENCES USER(ID)
 )
+
+
 
 SELECT * FROM EMPLOYEE
 
@@ -27,19 +29,19 @@ INSERT INTO EMPLOYEE VALUES ('MANAGER_01', '152266633', 'Nguyễn', 'Đức', 'A
 
 CREATE TABLE ACCOUNT (
 	ID INT PRIMARY KEY AUTO_INCREMENT,
-    EMAIL VARCHAR(50) NOT NULL UNIQUE,
+    USERNAME VARCHAR(20) UNIQUE NOT NULL,
     PASSWORD TEXT NOT NULL,
-    FOREIGN KEY(EMAIL) REFERENCES USER(EMAIL)
+    FOREIGN KEY (USERNAME) REFERENCES USER(ID)
 )
 
+drop table account
+
 select * from account
 
-insert into account (username, password) values ('ADMIN_01', '123')
-drop table account
-drop table employee
-DROP TABLE CUSTOMER
-DROP TABLE BANKCARD
 select * from account
+
+select * from user
+
 
 select * from employee
 select * from customer
@@ -47,7 +49,7 @@ select * from customer
 select * from account
 
 CREATE TABLE USER (
-	ID INT PRIMARY KEY AUTO_INCREMENT,
+	ID VARCHAR(20) PRIMARY KEY,
     CID VARCHAR(20) UNIQUE NOT NULL,
     FIRSTNAME NVARCHAR(50) NOT NULL,
     MIDDLENAME NVARCHAR(50),
@@ -63,7 +65,8 @@ CREATE TABLE USER (
 
 CREATE TABLE CUSTOMER(
 	ID INT PRIMARY KEY AUTO_INCREMENT,
-	USERID INT,
+	USERID VARCHAR(20),
+    TRANSACTION ARRAY,
     FOREIGN KEY(USERID) REFERENCES USER(ID)
 )
 
@@ -86,6 +89,22 @@ CREATE TABLE BANNER (
 
 
 select * from banner
+
+
+
+
+
+
+
+
+
+
+drop table account
+drop table employee
+DROP TABLE CUSTOMER
+DROP TABLE BANKCARD
+drop table user
+
 
 
 

@@ -47,3 +47,21 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4
 ####
 GET http://localhost:8000/account/auth
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI
+
+
+####
+POST http://localhost:8000/employee/employee_api
+Content-Type: application/json
+
+{
+    "cId": "052200338",
+    "firstName": "Nguyễn",
+    "middleName": "Minh",
+    "lastName": "Trí",
+    "bDate": "2001-04-04",
+    "phone": "0938681192",
+    "address": "34A 43 street",
+    "avatar": "https://phunugioi.com/wp-content/uploads/2020/01/anh-avatar-supreme-dep-lam-dai-dien-facebook.jpg",
+    "email": "nguyenductri04042001@gmail.com",
+    "role": "1"
+}

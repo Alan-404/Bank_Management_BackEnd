@@ -1,9 +1,11 @@
 import jwt
 
-from random import randrange
+from random import randrange, randint
 
 
 from common.constants import Constants
+
+
 def getIdByToken(request):
     header = request.headers.get('Authorization')
     token = header.split()[1];
@@ -28,5 +30,10 @@ def makeIdCard():
         
     return card
 
+def makeId():
+    id = ""
+    for i in range(10):
+        id+= str(randint(0,9))
+    return id
 
 
